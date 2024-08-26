@@ -1,34 +1,36 @@
-# 2024-2025 tutorials
+# 2024-2025 Tutorials
 
-[slides](https://drive.google.com/drive/folders/173Lt1Jz-7L5XWdkfLb0E8ajKTglWB2Hs?usp=sharing)
+[Slides](https://drive.google.com/drive/folders/173Lt1Jz-7L5XWdkfLb0E8ajKTglWB2Hs?usp=sharing)
 
-## overview
+[Curriculum details](https://docs.google.com/document/d/1dhRemsenL_EWcd1aVbPf5Y7CM4auZ9awtKhJXXBI89g/edit?usp=sharing)
 
-this repo hosts **all source code** written in the tutorials.
+## Overview
 
-the primary goal of the tutorials is to:
+This repo hosts **all source code** written in the tutorials.
 
-1. cover enough content for you to start learning more on your own (there are plenty of resources online)
-2. walk you through the creation of several simple projects from scratch
+The primary goal of the tutorials is to:
 
-from week1-week5 we are going to create a simple HTML/CSS/JS portfolio website
+1. Cover enough content for you to start learning more on your own (there are plenty of resources online)
+2. Walk you through the creation of several simple projects from scratch
 
-from week5-week9 we are then going to create a fullstack CMS to support our portfolio site
+From week1-week5 we are going to create a simple HTML/CSS/JS portfolio website
 
-## prerequisites
+From week5-week9 we are then going to create a fullstack CMS to support our portfolio site
 
-to follow along with the tutorials, **basic programming skills are needed**:
+## Prerequisites
+
+To follow along with the tutorials, **basic programming skills are needed**:
 
 - variables, conditional statements, loops
 - functions
 - data types
 - basics of OOP (classes and objects)
 
-everything else will be covered
+Everything else will be covered
 
-## timeline
+## Timeline
 
-this is obviously subject to change:
+This is obviously subject to change:
 
 - Week 1 - Intro/HTML
 - Week 2 - CSS
@@ -40,3 +42,4 @@ this is obviously subject to change:
 - Week 8 - React
 - Week 9 - Deployment and Rendering Strategies
 - Week 10 - Other web Technologies
+
