@@ -2,16 +2,21 @@
 
 [Slides](https://drive.google.com/drive/folders/173Lt1Jz-7L5XWdkfLb0E8ajKTglWB2Hs?usp=sharing)
 
-[Curriculum details](https://docs.google.com/document/d/1dhRemsenL_EWcd1aVbPf5Y7CM4auZ9awtKhJXXBI89g/edit?usp=sharing)
+[Curriculum Timeline and Details](https://docs.google.com/document/d/1dhRemsenL_EWcd1aVbPf5Y7CM4auZ9awtKhJXXBI89g/edit?usp=sharing)
 
 ## Overview
 
 This repo hosts **all source code** written in the tutorials.
 
-The primary goal of the tutorials is to:
+The goal of the tutorials is to:
 
-1. Cover enough content for you to start learning more on your own (there are plenty of resources online)
-2. Walk you through the creation of several simple projects from scratch
+1. Cover the fundamentals
+
+Due to time constraints, we simply cannot cover *everything* there is to know. We want to teach you **how things really work**, so that you won't get confused when you start digging deeper yourself, the key to success still lies heavily on your own curiosity.
+
+2. Have you walk away with 2 projects
+
+Everyone says it but it's true, **you learn by doing**, you don't know the difficulties you'll face until you've tried doing it yourself, so this is a great opportunity to use the fundamentals you've learnt to solve the issues you'll face by yourself. By the end, we hope you'll have something to showcase on your resume!
 
 From week1-week5 we are going to create a simple HTML/CSS/JS portfolio website
 
@@ -27,19 +32,3 @@ To follow along with the tutorials, **basic programming skills are needed**:
 - basics of OOP (classes and objects)
 
 Everything else will be covered
-
-## Timeline
-
-This is obviously subject to change:
-
-- Week 1 - Intro/HTML
-- Week 2 - CSS
-- Week 3 - JavaScript
-- Week 4 - Command Line Interface (CLI)
-- Week 5 - Git/GitHub
-- Week 6 - Node/NPM
-- Week 7 - MongoDB
-- Week 8 - React
-- Week 9 - Deployment and Rendering Strategies
-- Week 10 - Other web Technologies
-
