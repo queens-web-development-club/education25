@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #D9D9D9;
+}
+
+#johnpork {
+    display: block;
+    height: auto;       /* Make image retain native aspect ratio */
+}
+
+#skills {
+    text-align: center;
+}
+
+#skills ul {
+    display: inline-block;      /* Makes the <ul> block-level but allows it to be centered within its parent container. */
+    text-align: left;       /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
+    padding-left: 20px;     /* Shift list right slightly */
+}
+
+#skills > div {
+    margin: 0 10%;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    /* margin: 0; */
+}
+
+
+h3 {
+    
+}
+
+p {
+    /* margin: 0; */
+}
+
+@media screen and (max-width: 767px) {
+    .mobile-margin {
+        margin: auto;
+        width: 80%;
+    }
+}
+@media screen and (min-width: 768px) {
+    #johnpork {
+        display: inline-block;
+    }
+
+    #about {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #skills {
+        display: flex;
+        justify-content: center;
+        /* align-items: start; */
+    }
+
+    body > h2 {
+        text-align: center;
+    }
+
+    .desktop-margin {
+        margin: auto;
+        width: 90%;
+    }
+}
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1200px) {
+}
