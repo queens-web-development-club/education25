@@ -1,41 +1,16 @@
 body {
     margin: 0;
-}
-
-header {
-    background-color: #D9D9D9;
-}
-
-#johnpork {
-    display: block;
-    height: auto;       /* Make image retain native aspect ratio */
-}
-
-#skills {
-    text-align: center;
-}
-
-#skills ul {
-    display: inline-block;      /* Makes the <ul> block-level but allows it to be centered within its parent container. */
-    text-align: left;       /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
-    padding-left: 20px;     /* Shift list right slightly */
-}
-
-#skills > div {
-    margin: 0 10%;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
+    font-family: 'Inter';
 }
 
 h1 {
     /* margin: 0; */
 }
 
+h2 {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+}
 
 h3 {
     
@@ -45,35 +20,98 @@ p {
     /* margin: 0; */
 }
 
-@media screen and (max-width: 767px) {
+header {
+    background-color: #D9D9D9;
+    padding: 5vh 10vw;
+    margin-bottom: 5vh;
+}
+
+#johnpork {
+    display: block;
+    height: auto;       /* Make image retain native aspect ratio */
+}
+
+#skills {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills ul {
+    display: inline-block;      /* Makes the <ul> block-level but allows it to be centered within its parent container. */
+    text-align: left;       /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
+    padding-left: 20px;     /* Shift list right slightly */
+}
+
+#skills > div {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    width: 45%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin-bottom: 1.5vh;
+}
+
+form button {
+    padding: 1vh 0;
+    font-family: 'Inter';
+}
+
+form button:hover {
+    cursor: pointer;
+    transform: translateY(-2.5px);
+    transition: transform 0.2s ease;
+}
+
+footer {
+    margin-top: 1vh;
+}
+
+@media screen and (max-width: 768px) {
     .mobile-margin {
-        margin: auto;
         width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #skills > div:not(:last-child) {
+        margin-bottom: 2.5vh;
     }
 }
 @media screen and (min-width: 768px) {
     #johnpork {
         display: inline-block;
+        max-width: 30%;
     }
 
     #about {
         display: inline-block;
         vertical-align: top;
+        max-width: 55%;
+        padding-left: 5vw;
     }
 
     #skills {
-        display: flex;
-        justify-content: center;
-        /* align-items: start; */
+        flex-direction: row;
+        align-items: stretch;
+        /* justify-content: space-evenly; */
     }
 
-    body > h2 {
+    #skills-header {
         text-align: center;
     }
 
     .desktop-margin {
-        margin: auto;
         width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media screen and (min-width: 1024px) {
