@@ -1,28 +1,38 @@
+html {
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     font-family: 'Inter';
 }
 
 h1 {
-    /* margin: 0; */
+    font-size: 1.75rem;
 }
 
 h2 {
     margin-top: 5vh;
     margin-bottom: 1vh;
+    font-size: 1.25rem;
 }
 
 h3 {
-    
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 p {
-    /* margin: 0; */
+    font-size: 0.75rem;
+}
+
+li {
+    font-size: 0.75rem;
 }
 
 header {
     background-color: #D9D9D9;
-    padding: 5vh 10vw;
+    padding: 2.5vh 10vw;
     margin-bottom: 5vh;
 }
 
@@ -48,6 +58,7 @@ header {
     background-color: #D9D9D9;
     border-radius: 10px;
     width: 45%;
+    padding-top: 1vh;
 }
 
 form {
@@ -57,6 +68,8 @@ form {
 
 form input, form textarea {
     margin-bottom: 1.5vh;
+    background-color: #D9D9D9;
+    border: 2px solid #c5c5c5;
 }
 
 form button {
@@ -86,6 +99,10 @@ footer {
     }
 }
 @media screen and (min-width: 768px) {
+    html {
+        font-size: 19px;
+    }
+
     #johnpork {
         display: inline-block;
         max-width: 30%;
@@ -96,6 +113,10 @@ footer {
         vertical-align: top;
         max-width: 55%;
         padding-left: 5vw;
+    }
+
+    #about > h2 {
+        margin-top: 0;
     }
 
     #skills {
