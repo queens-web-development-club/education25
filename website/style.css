@@ -39,6 +39,7 @@ header {
 #johnpork {
     display: block;
     height: auto;       /* Make image retain native aspect ratio */
+    border-radius: 10px;
 }
 
 #skills {
@@ -66,15 +67,22 @@ form {
     flex-direction: column;
 }
 
+form label {
+    margin-bottom: 0.75vh;
+}
+
 form input, form textarea {
     margin-bottom: 1.5vh;
     background-color: #D9D9D9;
     border: 2px solid #c5c5c5;
+    font-family: 'Inter';
+    font-size: 0.75rem;
 }
 
 form button {
     padding: 1vh 0;
     font-family: 'Inter';
+    border-radius: 5px;
 }
 
 form button:hover {
@@ -84,7 +92,7 @@ form button:hover {
 }
 
 footer {
-    margin-top: 1vh;
+    margin: 1.5vh 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -103,15 +111,21 @@ footer {
         font-size: 19px;
     }
 
+    .desktop-margin {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #johnpork {
         display: inline-block;
-        max-width: 30%;
+        max-width: 22.5%;
     }
 
     #about {
         display: inline-block;
         vertical-align: top;
-        max-width: 55%;
+        max-width: 62.5%;
         padding-left: 5vw;
     }
 
@@ -122,20 +136,69 @@ footer {
     #skills {
         flex-direction: row;
         align-items: stretch;
-        /* justify-content: space-evenly; */
+        justify-content: space-between;
+    }
+
+    #skills > div {
+        padding-top: 2.5vh;
+        max-width: 27.5%;
+    }
+
+    #skills > div:not(:last-child) {
+        margin-bottom: 0;
     }
 
     #skills-header {
         text-align: center;
     }
+}
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 22px;
+    }
 
     .desktop-margin {
-        width: 90%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
+
+    header {
+        padding-left: 15vw;
+        padding-left: 15vw;
+    }
+
+    #skills > div {
+        padding-top: 2.5vh;
+        /* max-width: 22.5%; */
+    }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1600px) {
+    html {
+        font-size: 24px;
+    }
+
+    #skills > div {
+        max-width: 22.5%;
+    }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 3000px) {
+    .desktop-margin {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    html {
+        font-size: 27px;
+    }
+
+    header {
+        padding-left: 20vw;
+        padding-left: 20vw;
+    }
+
+    #skills > div {
+        max-width: 17.5%;
+    }
 }
