@@ -1,40 +1,18 @@
-html {
-    font-size: 16px;
-}
-
 body {
     margin: 0;
     font-family: 'Inter';
 }
 
-h1 {
-    font-size: 1.75rem;
-}
-
-h2 {
-    margin-top: 5vh;
-    margin-bottom: 1vh;
-    font-size: 1.25rem;
-}
-
-h3 {
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-p {
-    font-size: 0.75rem;
+header {
+    background-color: #ff9595;
+    padding: 2.5vh 10vw;
+    margin-bottom: 5vh;
 }
 
 li {
     font-size: 0.75rem;
 }
 
-header {
-    background-color: #D9D9D9;
-    padding: 2.5vh 10vw;
-    margin-bottom: 5vh;
-}
 
 #johnpork {
     display: block;
@@ -56,10 +34,18 @@ header {
 }
 
 #skills > div {
-    background-color: #D9D9D9;
     border-radius: 10px;
     width: 45%;
     padding-top: 1vh;
+}
+#languages{
+    background-color: rgb(108, 108, 255);
+}
+#technologies{
+    background-color: rgb(255, 248, 166);
+}
+#devtools{
+    background-color: rgb(255, 166, 166);
 }
 
 form {
@@ -112,7 +98,7 @@ footer {
     }
 
     .desktop-margin {
-        width: 90%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
