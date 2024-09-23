@@ -51,6 +51,7 @@ li {
 form {
     display: flex;
     flex-direction: column;
+    width: 30% !important;
 }
 
 form label {
@@ -69,6 +70,7 @@ form button {
     padding: 1vh 0;
     font-family: 'Inter';
     border-radius: 5px;
+    width: 20%;
 }
 
 form button:hover {
