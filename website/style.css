@@ -83,7 +83,7 @@ footer {
     margin: 1.5vh 0;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .mobile-margin {
         width: 80%;
         margin-left: auto;
@@ -94,7 +94,7 @@ footer {
         margin-bottom: 2.5vh;
     }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     html {
         font-size: 19px;
     }
