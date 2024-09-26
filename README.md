@@ -1,5 +1,7 @@
 # 2024-2025 Tutorials
 
+[Lecture Recordings](https://drive.google.com/drive/folders/1bPHt2fB_ApqPEWoYzU_4WEWWkpkpKCSy?usp=drive_link)
+
 [Slides](https://drive.google.com/drive/folders/173Lt1Jz-7L5XWdkfLb0E8ajKTglWB2Hs?usp=sharing)
 
 [Curriculum Timeline and Details](https://docs.google.com/document/d/1dhRemsenL_EWcd1aVbPf5Y7CM4auZ9awtKhJXXBI89g/edit?usp=sharing)
