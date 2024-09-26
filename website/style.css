@@ -1,11 +1,12 @@
 body {
-    margin: 0;
+    margin: 0 10vw;
     font-family: 'Inter';
 }
 
 header {
     background-color: #ff9595;
     padding: 2.5vh 10vw;
+    margin: 0 -10vw;
     margin-bottom: 5vh;
 }
 
@@ -13,11 +14,12 @@ li {
     font-size: 0.75rem;
 }
 
-
 #johnpork {
     display: block;
     height: auto;       /* Make image retain native aspect ratio */
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #skills {
@@ -38,12 +40,19 @@ li {
     width: 45%;
     padding-top: 1vh;
 }
+
+#skills > div:not(:last-child) {
+    margin-bottom: 2.5vh;
+}
+
 #languages{
     background-color: rgb(108, 108, 255);
 }
+
 #technologies{
     background-color: rgb(255, 248, 166);
 }
+
 #devtools{
     background-color: rgb(255, 166, 166);
 }
@@ -51,7 +60,9 @@ li {
 form {
     display: flex;
     flex-direction: column;
-    width: 30% !important;
+    width: 60% !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form label {
@@ -67,10 +78,10 @@ form input, form textarea {
 }
 
 form button {
-    padding: 1vh 0;
+    padding: 0.5vh 0;
     font-family: 'Inter';
     border-radius: 5px;
-    width: 20%;
+    width: 30%;
 }
 
 form button:hover {
@@ -83,26 +94,9 @@ footer {
     margin: 1.5vh 0;
 }
 
-@media (max-width: 768px) {
-    .mobile-margin {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #skills > div:not(:last-child) {
-        margin-bottom: 2.5vh;
-    }
-}
 @media (min-width: 768px) {
     html {
         font-size: 19px;
-    }
-
-    .desktop-margin {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     #johnpork {
@@ -138,5 +132,9 @@ footer {
 
     #skills-header {
         text-align: center;
+    }
+
+    form {
+        width: 30% !important;
     }
 }
