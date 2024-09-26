@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+}
+
+header {
+    background-color: #ff9595;
+    padding: 2.5vh 10vw;
+    margin-bottom: 5vh;
+}
+
+li {
+    font-size: 0.75rem;
+}
+
+
+#johnpork {
+    display: block;
+    height: auto;       /* Make image retain native aspect ratio */
+    border-radius: 10px;
+}
+
+#skills {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills ul {
+    display: inline-block;      /* Makes the <ul> block-level but allows it to be centered within its parent container. */
+    text-align: left;       /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
+    padding-left: 20px;     /* Shift list right slightly */
+}
+
+#skills > div {
+    border-radius: 10px;
+    width: 45%;
+    padding-top: 1vh;
+}
+#languages{
+    background-color: rgb(108, 108, 255);
+}
+#technologies{
+    background-color: rgb(255, 248, 166);
+}
+#devtools{
+    background-color: rgb(255, 166, 166);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30% !important;
+}
+
+form label {
+    margin-bottom: 0.75vh;
+}
+
+form input, form textarea {
+    margin-bottom: 1.5vh;
+    background-color: #D9D9D9;
+    border: 2px solid #c5c5c5;
+    font-family: 'Inter';
+    font-size: 0.75rem;
+}
+
+form button {
+    padding: 1vh 0;
+    font-family: 'Inter';
+    border-radius: 5px;
+    width: 20%;
+}
+
+form button:hover {
+    cursor: pointer;
+    transform: translateY(-2.5px);
+    transition: transform 0.2s ease;
+}
+
+footer {
+    margin: 1.5vh 0;
+}
+
+@media (max-width: 768px) {
+    .mobile-margin {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #skills > div:not(:last-child) {
+        margin-bottom: 2.5vh;
+    }
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 19px;
+    }
+
+    .desktop-margin {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #johnpork {
+        display: inline-block;
+        max-width: 22.5%;
+    }
+
+    #about {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 62.5%;
+        padding-left: 5vw;
+    }
+
+    #about > h2 {
+        margin-top: 0;
+    }
+
+    #skills {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    #skills > div {
+        padding-top: 2.5vh;
+        max-width: 27.5%;
+    }
+
+    #skills > div:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    #skills-header {
+        text-align: center;
+    }
+}
