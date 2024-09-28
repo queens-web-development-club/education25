@@ -29,9 +29,9 @@
             <li>I'm very handsome!</li>
         </ul>
         <div id = "quote-section">
-            <h3>My Quote of the Day</h3>
+            <h3>My Joke of the Day</h3>
             <div id = "quote-box">
-                <blockquote id = "quote">
+                <blockquote id = "joke">
                     loading...
                 </blockquote>
                 <span id = "authour">
@@ -100,4 +100,19 @@
             <img src="assets/gmail.png" alt="github logo" width="65">
         </a>
     </footer>
+
+    <script>
+        const api_url = "https://v2.jokeapi.dev/joke/Pun?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+        const joke = document.getElementById("joke");
+        const authour = document.getElementById("authour");
+        
+        async function getQuote(url){
+            const response = await fetch(url);
+            const data = await response.json();
+            joke.innerHTML = data.joke;
+            authour.innerHTML = "- John Pork"; // This is just so both the joke and authour load at the same time
+        }
+        
+        getQuote(api_url)
+    </script>
 </body>
