@@ -1,140 +1,161 @@
 body {
-    margin: 0 10vw;
-    font-family: 'Inter';
+  margin: 0 10vw;
+  font-family: "Inter";
 }
 
 header {
-    background-color: #ff9595;
-    padding: 2.5vh 10vw;
-    margin: 0 -10vw;
-    margin-bottom: 5vh;
+  background-color: #ff9595;
+  padding: 2.5vh 10vw;
+  margin: 0 -10vw;
+  margin-bottom: 5vh;
 }
 
 li {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 #johnpork {
-    display: block;
-    height: auto;       /* Make image retain native aspect ratio */
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  height: auto; /* Make image retain native aspect ratio */
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #skills {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #skills ul {
-    display: inline-block;      /* Makes the <ul> block-level but allows it to be centered within its parent container. */
-    text-align: left;       /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
-    padding-left: 20px;     /* Shift list right slightly */
+  display: inline-block; /* Makes the <ul> block-level but allows it to be centered within its parent container. */
+  text-align: left; /* Ensures that the text within each <li> is left-aligned relative to the bullets. */
+  padding-left: 20px; /* Shift list right slightly */
 }
 
 #skills > div {
-    border-radius: 10px;
-    width: 45%;
-    padding-top: 1vh;
+  border-radius: 10px;
+  width: 45%;
+  padding-top: 1vh;
 }
 
 #skills > div:not(:last-child) {
-    margin-bottom: 2.5vh;
+  margin-bottom: 2.5vh;
 }
 
-#languages{
-    background-color: rgb(108, 108, 255);
+#languages {
+  background-color: rgb(108, 108, 255);
 }
 
-#technologies{
-    background-color: rgb(255, 248, 166);
+#technologies {
+  background-color: rgb(255, 248, 166);
 }
 
-#devtools{
-    background-color: rgb(255, 166, 166);
+#devtools {
+  background-color: rgb(255, 166, 166);
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 60% !important;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 60% !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form label {
-    margin-bottom: 0.75vh;
+  margin-bottom: 0.75vh;
 }
 
-form input, form textarea {
-    margin-bottom: 1.5vh;
-    background-color: #D9D9D9;
-    border: 2px solid #c5c5c5;
-    font-family: 'Inter';
-    font-size: 0.75rem;
+form input,
+form textarea {
+  margin-bottom: 1.5vh;
+  background-color: #d9d9d9;
+  border: 2px solid #c5c5c5;
+  font-family: "Inter";
+  font-size: 0.75rem;
 }
 
 form button {
-    padding: 0.5vh 0;
-    font-family: 'Inter';
-    border-radius: 5px;
-    width: 30%;
+  padding: 0.5vh 0;
+  font-family: "Inter";
+  border-radius: 5px;
+  width: 30%;
 }
 
 form button:hover {
-    cursor: pointer;
-    transform: translateY(-2.5px);
-    transition: transform 0.2s ease;
+  cursor: pointer;
+  transform: translateY(-2.5px);
+  transition: transform 0.2s ease;
 }
 
 footer {
-    margin: 1.5vh 0;
+  margin: 1.5vh 0;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 19px;
-    }
+  html {
+    font-size: 19px;
+  }
 
-    #johnpork {
-        display: inline-block;
-        max-width: 22.5%;
-    }
+  #johnpork {
+    display: inline-block;
+    max-width: 22.5%;
+  }
 
-    #about {
-        display: inline-block;
-        vertical-align: top;
-        max-width: 62.5%;
-        padding-left: 5vw;
-    }
+  #about {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 62.5%;
+    padding-left: 5vw;
+  }
 
-    #about > h2 {
-        margin-top: 0;
-    }
+  #about > h2 {
+    margin-top: 0;
+  }
+  #quote-section {
+    padding-top: 2.5vh;
+  }
 
-    #skills {
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: space-between;
-    }
+  #quote-section > h3 {
+    text-align: center;
+    width: 100%;
+  }
 
-    #skills > div {
-        padding-top: 2.5vh;
-        max-width: 27.5%;
-    }
+  #quote-box {
+    width: 100%;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds the shadow */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+  }
 
-    #skills > div:not(:last-child) {
-        margin-bottom: 0;
-    }
+  #skills {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
 
-    #skills-header {
-        text-align: center;
-    }
+  #skills > div {
+    padding-top: 2.5vh;
+    max-width: 27.5%;
+  }
 
-    form {
-        width: 30% !important;
-    }
+  #skills > div:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  #skills-header {
+    text-align: center;
+  }
+
+  form {
+    width: 30% !important;
+  }
 }
