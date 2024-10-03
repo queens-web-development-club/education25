@@ -1,6 +1,6 @@
 # 2024-2025 Tutorials
 
-[Lecture Recordings](https://drive.google.com/drive/folders/1bPHt2fB_ApqPEWoYzU_4WEWWkpkpKCSy?usp=drive_link)
+[Lecture Recordings](https://www.youtube.com/watch?v=emmCZfBR_6g&list=PLSR68Deh_TkKYD52JIE55dpu4uvT40meu)
 
 [Slides](https://drive.google.com/drive/folders/173Lt1Jz-7L5XWdkfLb0E8ajKTglWB2Hs?usp=sharing)
 
