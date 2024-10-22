@@ -27,6 +27,35 @@ git --version
 
    - Note that the latest version of this is 2.33.0, which was released 2021-08-30
 
+
+# Git Installations for Windows
+
+## Install on WSL2
+
+1. Open WSL2. The following steps will require you to type commands into the CLI
+2. First ensure your package list is updated with
+```bash
+sudo apt update
+```
+3. Upgrade your packages with
+```bash
+sudo apt upgrade
+```
+4. Install git using
+```bash
+sudo apt install git
+```
+5. Verify Git is installed by checking version
+```bash
+git --version
+```
+
+## Install for Windows
+
+If you followed link in week4-cli-installations.md to install Git bash, you already have Git installed!
+If not, go to [https://git-scm.com/downloads](https://git-scm.com/downloads) and follow instructions to install Git for Windows.
+
+
 # GitHub SSH Setup
 
 1. [Generate a SSH key pair](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
