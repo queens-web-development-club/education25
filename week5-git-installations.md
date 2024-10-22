@@ -26,3 +26,8 @@ git --version
 1. You can find an [installer](https://sourceforge.net/projects/git-osx-installer/files/) here
 
    - Note that the latest version of this is 2.33.0, which was released 2021-08-30
+
+# GitHub SSH Setup
+
+1. [Generate a SSH key pair](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Put your public key on your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
