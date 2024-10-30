@@ -54,3 +54,30 @@
     node -v
     npm -v
 ```
+
+# Option 3: Install using WSL
+
+
+1. Open your terminal or press Ctrl + Alt + T.
+
+2. To install node.js use the following command:
+ ```bash
+   sudo apt install nodejs
+```
+3. Verify Installation
+
+ ```bash
+   node -v or node --version
+```
+
+Note: It is reccommended to install [Node Package Manager](https://www.geeksforgeeks.org/node-js-npm-node-package-manager/) (NPM) with Node.js
+
+To install NPM, use the following commands:
+ ```bash
+   sudo apt install npm 
+```
+
+Verify Installation
+ ```bash
+   npm -v or npm --version 
+```
