@@ -55,7 +55,7 @@
     npm -v
 ```
 
-# Option 3: Install using WSL
+## Option 3: Install using WSL
 
 
 1. Open your terminal or press Ctrl + Alt + T.
