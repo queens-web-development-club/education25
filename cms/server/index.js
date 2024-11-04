@@ -2,13 +2,13 @@ const express  = require('express')
 const {body, validationResult} = require('express-validator')
 const fs = require('fs');
 const bodyParser = require('body-parser')
+const cors = require("cors")
 
 const port = 3000
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 
-var info = require('./info.json')
-var contact = require('./contacts.json')
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
