@@ -54,7 +54,6 @@ app.post('/contacts',
          async (req, res) => {
 
     // validate
-    console.log(req.body)
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({error: "no load"})
