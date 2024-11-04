@@ -91,7 +91,6 @@ app.get('/contacts', async (req, res) => {
 })
 
 app.get('/contacts/:id', async(req, res) => {
-
     fs.readFile('./contacts.json', 'utf-8', (err, data) => {
         if (err) {
             return res.status(400).json({'success': false})
