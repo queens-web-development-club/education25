@@ -1,12 +1,12 @@
 const express  = require('express')
 const {body, validationResult} = require('express-validator')
 const fs = require('fs');
-const bodyParser = require('body-parser')
 const cors = require("cors")
 
 const port = 3000
 const app = express()
-app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 
@@ -54,6 +54,7 @@ app.post('/contacts',
          async (req, res) => {
 
     // validate
+    console.log(req.body)
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({error: "no load"})
