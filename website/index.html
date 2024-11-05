@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script src="joke.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,9 +21,7 @@
     <img src="assets/john.png" alt="john pork" id="johnpork" class="mobile-margin">
     <div id="about" class="mobile-margin">
         <h2>About Me</h2>
-        <p>
-            Hi! Name's John Pork, I'm an influencer currently studying computer science at Queen's University. I like to hang around near 
-            Chernoff Hall, come find me! My favorite food is bacon.
+        <p id="description">
         </p>
         <p>My top achievements are:</p>
         <ul>
@@ -45,48 +45,30 @@
     <section id="skills">
         <div id="languages">
             <h3>Languages</h3>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>C</li>
-                <li>C++</li>
+            <ul id="language-list">
             </ul>
         </div>
         <div id="technologies">
             <h3>Technologies</h3>
-            <ul>
-                <li>Node</li>
-                <li>React</li>
-                <li>Express.js</li>
-                <li>MongoDB</li>
-                <li>TailwindCSS</li>
-                <li>React</li>
+            <ul id="tech-list">
             </ul>
         </div>
         <div id="devtools">
             <h3>Developer Tools</h3>
-            <ul>
-                <li>VS Code</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>Bash</li>
+            <ul id="devtools-list">
             </ul>
         </div>
     </section>
 
     <h2>Let's Connect</h2>
-    <form action="">
+    <form id="form">
         <label for="fname">First Name</label>
-        <input type="text" id="fname" placeholder="Your name">
+        <input type="text" id="fname" placeholder="Your name" name="firstName">
         <label for="lname">Last Name</label>
-        <input type="text" id="lname" placeholder="Your last name">
+        <input type="text" id="lname" placeholder="Your last name" name="lastName">
         <label for="subject">Subject</label>
-        <textarea id="subject" placeholder="Write something..."></textarea>
-        <button>Submit</button>
+        <textarea id="subject" placeholder="Write something..." name="subject"></textarea>
+        <button type="button", onclick="submitForm()">Submit</button>
     </form>
 
     <footer>
@@ -101,6 +83,4 @@
         </a>
     </footer>
 
-    <script src="script.js">
-    </script>
 </body>

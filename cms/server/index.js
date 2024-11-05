@@ -1,14 +1,14 @@
 const express  = require('express')
 const {body, validationResult} = require('express-validator')
 const fs = require('fs');
-const bodyParser = require('body-parser')
+const cors = require("cors")
 
 const port = 3000
 const app = express()
-app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
-var info = require('./info.json')
-var contact = require('./contacts.json')
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
@@ -91,7 +91,6 @@ app.get('/contacts', async (req, res) => {
 })
 
 app.get('/contacts/:id', async(req, res) => {
-
     fs.readFile('./contacts.json', 'utf-8', (err, data) => {
         if (err) {
             return res.status(400).json({'success': false})
