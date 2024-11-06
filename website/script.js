@@ -1,5 +1,5 @@
 async function loadContent(){
-    const res = await fetch("http://localhost:3000/info")
+    const res = await fetch("http://localhost:3000/content")
     const content = await res.json()
     document.querySelector("#description").textContent = content.aboutMe
 

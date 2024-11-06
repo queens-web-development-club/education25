@@ -13,8 +13,8 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/info', async(req, res) => {
-    fs.readFile('./info.json', 'utf-8', (err, data) => {
+app.get('/content', async(req, res) => {
+    fs.readFile('./content.json', 'utf-8', (err, data) => {
         if (err) {
             return res.status(400).json({'success': false})
         }
@@ -22,7 +22,7 @@ app.get('/info', async(req, res) => {
     })
 })
 
-app.post('/info', 
+app.post('/content', 
          body('aboutMe').notEmpty().isString(),
          body('languages').notEmpty().isArray(),
          body('technologies').notEmpty().isArray(),
@@ -36,7 +36,7 @@ app.post('/info',
     }
 
     const json = JSON.stringify(req.body)
-    fs.writeFile('./info.json', json, 'utf-8', (err) => {
+    fs.writeFile('./content.json', json, 'utf-8', (err) => {
         if (err) {
             return res.status(400).json({'success': false})
         }
