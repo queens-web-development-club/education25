@@ -1,51 +1,83 @@
-const express  = require('express')
-const {body, validationResult} = require('express-validator')
-const fs = require('fs');
-const cors = require("cors")
+// index.js
+const express = require('express');
+const { body, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
+const cors = require("cors");
 
-const port = 3000
-const app = express()
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+const port = 3000;
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/cms', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.log(err));
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// Define Mongoose Schemas and Models
+const infoSchema = new mongoose.Schema({
+    aboutMe: String,
+    languages: [String],
+    technologies: [String],
+    developerTools: [String]
+}, 
+{collection: 'info'});
+const Info = mongoose.model('Info', infoSchema);
 
-app.get('/info', async(req, res) => {
-    fs.readFile('./info.json', 'utf-8', (err, data) => {
-        if (err) {
-            return res.status(400).json({'success': false})
-        }
-        return res.status(200).json(JSON.parse(data))
-    })
-})
+const contactSchema = new mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    subject: String
+},
+{collection: 'contact'});
+const Contact = mongoose.model('Contact', contactSchema);
+
+// Define Routes
+
+// Info Routes
+app.get('/info', async (req, res) => {
+    try {
+        const info = await Info.findOne(); // Fetch single document
+        res.status(200).json(info);
+    } catch (error) {
+        res.status(400).json({ 'success': false });
+    }
+});
 
 app.post('/info', 
-         body('aboutMe').notEmpty().isString(),
-         body('languages').notEmpty().isArray(),
-         body('technologies').notEmpty().isArray(),
-         body('developerTools').notEmpty().isArray(),
-         async(req, res) => {
-    
-    // validate
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({error: "no load"})
+    body('aboutMe').notEmpty().isString(),
+    body('languages').notEmpty().isArray(),
+    body('technologies').notEmpty().isArray(),
+    body('developerTools').notEmpty().isArray(),
+    async (req, res) => {
+
+const errors = validationResult(req);
+if (!errors.isEmpty()) {
+   console.log("Validation errors:", errors.array());  // Log validation errors
+    return res.status(400).json({ error: errors.array() });
+}
+
+try {
+    await Info.findOneAndUpdate({}, req.body, {new: true, upsert: true })
+    res.status(200).json({ 'success': true });
+} catch (error) {
+   console.log("Error saving data:", error);  // Log save error
+    res.status(400).json({ 'success': false });
+}
+});
+
+// Contact Routes
+app.get('/contacts', async (req, res) => {
+    try {
+        const contacts = await Contact.find();
+        res.status(200).json(contacts);
+    } catch (error) {
+        res.status(400).json({ 'success': false });
     }
-
-    const json = JSON.stringify(req.body)
-    fs.writeFile('./info.json', json, 'utf-8', (err) => {
-        if (err) {
-            return res.status(400).json({'success': false})
-        }
-        console.log('wrote to file')
-        return res.status(200).json({'success': true})
-    })
-})
-
+});
 
 app.post('/contacts',
          body('firstName').notEmpty().isString(),
@@ -53,57 +85,43 @@ app.post('/contacts',
          body('subject').notEmpty().isString(),
          async (req, res) => {
 
-    // validate
-    const errors = validationResult(req)
+    // Validate
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({error: "no load"})
+        return res.status(400).json({ error: "Validation failed" });
     }
 
-    fs.readFile('./contacts.json', 'utf-8', (err, data) => {
-        if (err) {
-            return res.status(400).json({'success': false})
-        }
+    try {
+        const newContact = new Contact(req.body);
+        const saved = await newContact.save();
+        res.status(200).json({ 'success': true, 'id': saved._id});
+    } catch (error) {
+        res.status(400).json({ 'success': false });
+    }
+});
 
-        // get id and add to body
-        const jsonData = JSON.parse(data)
-        const id = jsonData[jsonData.length - 1].id + 1
-        const newContact = req.body
-        newContact.id = id
-        jsonData.push(newContact)
-        fs.writeFile('./contacts.json', JSON.stringify(jsonData), (err) => {
-            if (err) {
-                return res.status(400).json({'success': false})
-            }
-            console.log('wrote to file')
-            return res.status(200).json({'success': true})
-        })
-    })
-    
-})
-
-app.get('/contacts', async (req, res) => {
-    fs.readFile('./contacts.json', 'utf-8', (err, data) => {
-        if (err) {
-            return res.status(400).json({'success': false})
+app.get('/contacts/:id', async (req, res) => {
+    try {
+        const contact = await Contact.findById(req.params.id).exec();
+        if (contact) {
+            res.status(200).json(contact);
+        } else {
+            res.status(404).json({ 'success': false });
         }
-    return res.status(200).json(JSON.parse(data))
-    })
-})
+    } catch (error) {
+        res.status(400).json({ 'success': false });
+    }
+});
 
-app.get('/contacts/:id', async(req, res) => {
-    fs.readFile('./contacts.json', 'utf-8', (err, data) => {
-        if (err) {
-            return res.status(400).json({'success': false})
-        }
+app.delete('/contacts/:id', async (req, res) => {
+    try {
+        await Contact.findByIdAndDelete(req.params.id)
+        res.status(204).json({ 'success': true });
+    } catch (error) {
+        res.status(400).json({ 'success': false });
+    }
+});
 
-        const id = req.params.id
-        const jsonData = JSON.parse(data)
-        for (let i = 0; i < jsonData.length; i++) {
-            let obj = jsonData[i];
-            if (obj.id == id) {
-                return res.status(200).json(obj)
-            }
-        }
-        return res.status(400).json({'success': false})
-    })
-})
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});
