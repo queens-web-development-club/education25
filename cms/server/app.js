@@ -4,7 +4,7 @@ const fs = require('fs');
 const mongoose = require('mongoose')
 const cors = require("cors")
 
-const port = 3000
+const port = 3001
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -37,7 +37,7 @@ const passwordSchema = new mongoose.Schema({
     password: String
 },
 {collection: 'password'})
-const Password = mongoose.model('Passowrd', passwordSchema)
+const Password = mongoose.model('Password', passwordSchema)
 
 // Content Routes
 app.get('/content', async (req, res) => {
@@ -49,7 +49,7 @@ app.get('/content', async (req, res) => {
     }
 });
 
-app.post('/content', 
+app.post('/content',
          body('aboutMe').notEmpty().isString(),
          body('languages').notEmpty().isArray(),
          body('technologies').notEmpty().isArray(),
