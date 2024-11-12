@@ -18,36 +18,34 @@ mongoose.connect('mongodb://localhost:27017/cms', {
   .catch((err) => console.log(err));
 
 // Define Mongoose Schemas and Models
-const infoSchema = new mongoose.Schema({
+const contentSchema = new mongoose.Schema({
     aboutMe: String,
     languages: [String],
     technologies: [String],
     developerTools: [String]
-}, 
-{collection: 'info'});
-const Info = mongoose.model('Info', infoSchema);
+});
+const Content = mongoose.model('Content', contentSchema);
 
 const contactSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     subject: String
-},
-{collection: 'contact'});
+});
 const Contact = mongoose.model('Contact', contactSchema);
 
 // Define Routes
 
-// Info Routes
-app.get('/info', async (req, res) => {
-    try {
-        const info = await Info.findOne(); // Fetch single document
-        res.status(200).json(info);
+// Content Routes
+app.get('/contents', async (req, res) => {
+   try {
+        const contents = await Content.findOne(); // Fetch single document
+        res.status(200).json(contents);
     } catch (error) {
         res.status(400).json({ 'success': false });
     }
 });
 
-app.post('/info', 
+app.post('/contents', 
     body('aboutMe').notEmpty().isString(),
     body('languages').notEmpty().isArray(),
     body('technologies').notEmpty().isArray(),
@@ -61,7 +59,7 @@ if (!errors.isEmpty()) {
 }
 
 try {
-    await Info.findOneAndUpdate({}, req.body, {new: true, upsert: true })
+    await Content.findOneAndUpdate({}, req.body, {new: true, upsert: true })
     res.status(200).json({ 'success': true });
 } catch (error) {
    console.log("Error saving data:", error);  // Log save error

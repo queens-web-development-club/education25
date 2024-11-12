@@ -1,6 +1,0 @@
-{
-    "aboutMe":"Hi! Name's John Pork, I'm an influencer currently studying computer science at Queen's University. I like to hang around near Chernoff Hall, come find me! My favorite food is bacon.",
-    "languages":["HTML", "CSS", "JavaScript", "Python", "C", "C++"],
-    "technologies":["Node.js","Express", "React", "Tailwind", "MongoDB"],
-    "developerTools":["VSCode","Git", "GitHub", "Bash"]
-}
