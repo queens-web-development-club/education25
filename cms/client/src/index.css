@@ -30,6 +30,11 @@ button {
   border-radius: 5px;
 }
 
+.save {
+  position: relative;
+  left: 70%;
+}
+
 textarea, input {
   width: 100%;
   padding: 8px;

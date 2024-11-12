@@ -9,7 +9,7 @@ function Login({ onAuthenticated }) {
     const response = await fetch('http://localhost:3001/admin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body : {"password" : {password}}
+      body : JSON.stringify({"password": password})
     });
     if (response.ok) {
       onAuthenticated(true);
