@@ -3,22 +3,24 @@ import AboutMe from "./AboutMe"
 import axios from "axios"
 import Contacts from "./Contacts"
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+
 export default function App(){
     const [content, setContent] = useState()
     const [contacts, setContacts] = useState()
     useEffect(()=>{
-        axios.get("http://localhost:3000/contents")
+        axios.get(`${backendUrl}/contents`)
         .then((res)=>{
             setContent(res.data)
         })
-        axios.get("http://localhost:3000/contacts")
+        axios.get(`${backendUrl}/contacts`)
         .then((res)=>{
             setContacts(res.data)
         })
     }, [])
 
     function updateAboutMe(newAboutMe){
-        axios.post("http://localhost:3000/contents", {
+        axios.post(`${backendUrl}/contents}`, {
             ...content,
             aboutMe: newAboutMe
         })
