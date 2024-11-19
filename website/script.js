@@ -1,5 +1,5 @@
 async function loadContent(){
-    const res = await fetch("http://localhost:3000/contents")
+    const res = await fetch("https://server-cool-glade-3651.fly.dev/contents")
     const content = await res.json()
     document.querySelector("#description").textContent = content.aboutMe
 
@@ -24,7 +24,7 @@ loadContent()
 function submitForm(){
     const form = document.querySelector("#form")
     const formData = new FormData(form)
-    fetch("http://localhost:3000/contacts", {
+    fetch("https://server-cool-glade-3651.fly.dev/contacts", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
