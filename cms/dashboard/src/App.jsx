@@ -20,7 +20,7 @@ export default function App(){
     }, [])
 
     function updateAboutMe(newAboutMe){
-        axios.post(`${backendUrl}/contents}`, {
+        axios.post(`${backendUrl}/contents`, {
             ...content,
             aboutMe: newAboutMe
         })
