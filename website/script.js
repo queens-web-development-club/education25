@@ -1,5 +1,5 @@
 async function loadContent(){
-    const res = await fetch("https://server-cool-glade-3651.fly.dev/contents")
+    const res = await fetch("https://server-crimson-field-4080.fly.dev/contents")
     const content = await res.json()
     document.querySelector("#description").textContent = content.aboutMe
 
